@@ -1,14 +1,17 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AutonomyModule } from './autonomy/autonomy.module';
+import { AutonomiesModule } from './autonomies/autonomies.module';
 import { HospitalsModule } from './hospitals/hospitals.module';
 import { SuppliersModule } from './suppliers/suppliers.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Autonomies } from './autonomy/autonomy.entity';
+import { Autonomies } from './autonomies/autonomies.entity';
 import { Hospitals } from './hospitals/hospitals.entity';
 import { HospitalNeedsModule } from './hospital-needs/hospital-needs.module';
 import { ResourcesModule } from './resources/resources.module';
+import { HospitalNeeds } from './hospital-needs/hospital-needs.entity';
+import { Resources } from './resources/resources.entity';
+import { Suppliers } from './suppliers/suppliers.entity';
 
 @Module({
   imports: [
@@ -17,12 +20,12 @@ import { ResourcesModule } from './resources/resources.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'Gar77919',
+      password: 'root',
       database: 'aire',
-      entities: [Autonomies, Hospitals],
+      entities: [Autonomies, Hospitals, HospitalNeeds, Resources, Suppliers],
       synchronize: true,
     }),
-    AutonomyModule,
+    AutonomiesModule,
     HospitalsModule,
     SuppliersModule,
     HospitalNeedsModule,
