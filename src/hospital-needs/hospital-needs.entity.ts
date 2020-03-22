@@ -5,9 +5,9 @@ import {
   ManyToOne,
   OneToOne,
 } from 'typeorm';
-import { Hospitals } from 'src/hospitals/hospitals.entity';
-import { Resources } from 'src/resources/resources.entity';
-import { Frequency } from 'src/generic/frequency.enum';
+import { Hospitals } from '../hospitals/hospitals.entity';
+import { Resources } from '../resources/resources.entity';
+import { Frequency } from '../generic/frequency.enum';
 
 @Entity()
 export class HospitalNeeds {

@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
+import { Resources } from '../resources/resources.entity';
 
 @Entity()
 export class Suppliers {
@@ -11,4 +18,8 @@ export class Suppliers {
   @Column() address: string;
 
   @Column() location: string;
+
+  @ManyToMany(type => Resources)
+  @JoinTable()
+  resources: Array<Resources>;
 }

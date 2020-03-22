@@ -11,4 +11,6 @@ export class Hospitals {
   @Column() address: string;
 
   @Column() location: string;
+
+  @Column() mainContact: string;
 }
